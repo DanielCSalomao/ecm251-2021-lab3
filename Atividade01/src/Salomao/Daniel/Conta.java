@@ -6,33 +6,30 @@ public class Conta {
         return usuario;
     }
 
-    public int getNumero() {
-        return numero;
+    public int getidConta() {
+        return idConta;
     }
 
-    //Atributos das classe
+
     private Usuario usuario;
     private double saldo;
-    private int numero;
+    public int idConta;
 
-    //Métodos da classe
 
-    //Construtor da classe
     public Conta(String nomeUsuario, double saldoInicial){
         this.saldo = saldoInicial;
         this.usuario = new Usuario(nomeUsuario);
-        this.numero = 1234;
+
+
     }
-    public Conta(String nomeUsuario, String cpf){
-        this.usuario = new Usuario(nomeUsuario);
-    }
+
 
     public double getSaldo(){
         return this.saldo;
     }
 
     public void depositar(double valor) {
-        //this.saldo = this.saldo + valor;
+
         this.saldo += valor;
     }
 
@@ -59,10 +56,7 @@ public class Conta {
 
     @Override
     public String toString() {
-        return "Conta{" +
-                "cliente=" + usuario.toString() +
-                ", saldo=" + saldo +
-                ", numero=" + numero +
-                '}';
+        return "" + usuario.toString() +
+                " - Saldo: " + saldo;
     }
 }
