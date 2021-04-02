@@ -24,6 +24,11 @@ public class Transacoes{
                 return "" + conta.getidConta() + ";" +conta.getUsuarios() + ";" + valor + ";" + numeroRandom;
         }
 
+        public String pagamentos(Contas cReceber, Contas cPagar, String code){
+                
+                String[] dados = code.split(";");
+                return dados[2];
 
+        }
 
 }

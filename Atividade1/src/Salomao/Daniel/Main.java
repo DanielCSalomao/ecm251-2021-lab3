@@ -37,6 +37,8 @@ public class Main {
         //System.out.println(c1.receber(1324, c2));
 
         Transacoes transacoes = new Transacoes();
-        System.out.println(transacoes.receber(123,c2));
+        String t1 = transacoes.receber(123,c1);
+        //System.out.println(transacoes.receber(123,c2));
+        System.out.println(transacoes.pagamentos(c1,c2, t1));
     }
 }
