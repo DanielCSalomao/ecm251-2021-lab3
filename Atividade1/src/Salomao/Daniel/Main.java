@@ -33,5 +33,10 @@ public class Main {
         System.out.println("Nome Usuário: " + c2.toString());
         System.out.println("Nome Usuário: " + c3.toString());
 
+
+        //System.out.println(c1.receber(1324, c2));
+
+        Transacoes transacoes = new Transacoes();
+        System.out.println(transacoes.receber(123,c2));
     }
 }

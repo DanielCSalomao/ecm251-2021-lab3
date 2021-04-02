@@ -1,13 +1,15 @@
 package Salomao.Daniel;
 
+
 public class Contas {
+    public static Object receber;
     static int idAtual = 0;
 
     {
         idAtual += 1;
     }
 
-    public Usuarios getClientes() {
+    public Usuarios getUsuarios() {
         return usuarios;
     }
 
@@ -24,6 +26,10 @@ public class Contas {
         this.usuarios = new Usuarios(nome);
         this.idConta = idAtual;
     }
+
+    //public String receber(double valor, Contas conta){
+    //    return "FOI KRL;" + conta.idConta;
+    //}
 
     @Override
     public String toString() {
