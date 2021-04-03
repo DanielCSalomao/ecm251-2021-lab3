@@ -30,7 +30,7 @@ public class Transacoes{
                 String[] dados = code.split(";");
                 int num = Integer.parseInt(dados[2]);
                 cPagar.transferirDinheiro(cReceber, num);
-                
+
 
         }
 
