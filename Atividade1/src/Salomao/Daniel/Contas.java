@@ -2,7 +2,7 @@ package Salomao.Daniel;
 
 
 public class Contas {
-    public static Object receber;
+
     static int idAtual = 0;
 
     {
@@ -27,9 +27,31 @@ public class Contas {
         this.idConta = idAtual;
     }
 
-    //public String receber(double valor, Contas conta){
-    //    return "FOI KRL;" + conta.idConta;
-    //}
+    public double getSaldo() {
+
+        return this.saldo;
+    }
+
+    public void depositar(double valor) {
+        this.saldo += valor;
+    }
+
+    public boolean sacar(double valor) {
+        if (this.saldo >= valor){
+            this.saldo -= valor;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean transferirDinheiro(Contas destino, double valor) {
+        if(this.sacar(valor)){
+            destino.depositar(valor);
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public String toString() {

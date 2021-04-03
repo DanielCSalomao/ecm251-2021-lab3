@@ -2,6 +2,7 @@ package Salomao.Daniel;
 
 import java.util.Random;
 
+
 public class Transacoes{
 
         private static int getRandomNumberInRange(int min, int max) {
@@ -24,10 +25,13 @@ public class Transacoes{
                 return "" + conta.getidConta() + ";" +conta.getUsuarios() + ";" + valor + ";" + numeroRandom;
         }
 
-        public String pagamentos(Contas cReceber, Contas cPagar, String code){
-                
+        public void pagamentos(Contas cReceber, Contas cPagar, String code){
+
                 String[] dados = code.split(";");
-                return dados[2];
+                int num = Integer.parseInt(dados[2]);
+                cPagar.transferirDinheiro(cReceber, num);
+
+                //return num;
 
         }
 
