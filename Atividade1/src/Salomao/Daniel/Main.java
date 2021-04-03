@@ -45,6 +45,8 @@ public class Main {
         String t2 = transacoes.receber(1000,c2);
         transacoes.pagamentos(c2,c3,t2);
 
+        //Estado final
+
         System.out.println("Estado Final:");
         System.out.println("Nome Usuário: " + c1.toString());
         System.out.println("Nome Usuário: " + c2.toString());
