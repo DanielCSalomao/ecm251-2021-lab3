@@ -1,13 +1,18 @@
+
+//Daniel Coimbra Salomão 19.02177-0
+//Andre Bonito Saad 18.01391-0
+
 package Salomao.Daniel;
 
-
 public class Contas {
+
 
     static int idAtual = 0;
 
     {
         idAtual += 1;
     }
+
 
     public Usuarios getUsuarios() {
         return usuarios;
@@ -31,6 +36,8 @@ public class Contas {
 
         return this.saldo;
     }
+
+    //operações necessarias para funcionamento
 
     public void depositar(double valor) {
         this.saldo += valor;
