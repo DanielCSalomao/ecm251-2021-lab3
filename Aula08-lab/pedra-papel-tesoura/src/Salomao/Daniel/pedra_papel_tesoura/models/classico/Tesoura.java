@@ -1,5 +1,7 @@
-package Salomao.Daniel;
+package Salomao.Daniel.pedra_papel_tesoura.models.classico;
 
+
+import Salomao.Daniel.pedra_papel_tesoura.models.Jogada;
 
 public class Tesoura extends Jogada {
 

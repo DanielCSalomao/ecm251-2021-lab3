@@ -1,5 +1,12 @@
-package Salomao.Daniel;
+package Salomao.Daniel.pedra_papel_tesoura_2.controladores;
 
+
+import Salomao.Daniel.pedra_papel_tesoura_2.models.*;
+import Salomao.Daniel.pedra_papel_tesoura_2.models.bazinga.Lagarto;
+import Salomao.Daniel.pedra_papel_tesoura_2.models.bazinga.Spoke;
+import Salomao.Daniel.pedra_papel_tesoura_2.models.classico.Papel;
+import Salomao.Daniel.pedra_papel_tesoura_2.models.classico.Pedra;
+import Salomao.Daniel.pedra_papel_tesoura_2.models.classico.Tesoura;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,7 +14,7 @@ import java.util.Scanner;
 public class Sistema {
     private Jogador player1, player2;
     private Scanner scanner;
-    private final Jogada [] jogadas = new Jogada[]{new Pedra(), new Papel(), new Tesoura()};
+    private final Jogada[] jogadas = new Jogada[]{new Pedra(), new Papel(), new Tesoura(), new Lagarto(), new Spoke()};
     public Sistema(){
         scanner = new Scanner(System.in);
         inicializarJogadores();
@@ -25,7 +32,10 @@ public class Sistema {
     }
 
     private Jogada escolheJogada() {
-        System.out.println("Informe sua jogada:\n0 - Pedra\n1 - Papel\n2 - Tesoura");
+        System.out.println("Informe sua jogada:");
+        for (int i = 0; i < jogadas.length; i++) {
+            System.out.println(""+i + ":" + jogadas[i]);
+        }
         int escolha = scanner.nextInt();
         return jogadas[escolha];
     }

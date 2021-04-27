@@ -1,4 +1,6 @@
-package Salomao.Daniel;
+package Salomao.Daniel.pedra_papel_tesoura_2;
+
+import Salomao.Daniel.pedra_papel_tesoura_2.controladores.Sistema;
 
 public class Main {
 

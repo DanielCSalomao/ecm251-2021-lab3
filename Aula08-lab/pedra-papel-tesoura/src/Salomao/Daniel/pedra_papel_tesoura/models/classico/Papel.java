@@ -1,6 +1,8 @@
-package Salomao.Daniel;
+package Salomao.Daniel.pedra_papel_tesoura.models.classico;
 
-public class Papel extends Jogada{
+import Salomao.Daniel.pedra_papel_tesoura.models.Jogada;
+
+public class Papel extends Jogada {
 
     @Override
     public boolean verificarSeGanhei(Jogada jogada) {

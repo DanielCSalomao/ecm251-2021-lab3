@@ -1,4 +1,4 @@
-package Salomao.Daniel;
+package Salomao.Daniel.pedra_papel_tesoura.models;
 
 
 public class Jogador {
