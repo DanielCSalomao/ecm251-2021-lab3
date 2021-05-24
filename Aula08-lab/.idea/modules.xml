@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Aula08-lab.iml" filepath="$PROJECT_DIR$/.idea/Aula08-lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pedra-papel-tesoura/pedra-papel-tesoura.iml" filepath="$PROJECT_DIR$/pedra-papel-tesoura/pedra-papel-tesoura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pedra-papel-tesoura - 2/pedra-papel-tesoura - 2.iml" filepath="$PROJECT_DIR$/pedra-papel-tesoura - 2/pedra-papel-tesoura - 2.iml" />
+    </modules>
+  </component>
+</project>

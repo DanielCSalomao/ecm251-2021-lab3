@@ -16,8 +16,8 @@ public abstract class Jogada {
     }
 
     final private boolean verificarSePerdi(Jogada jogada) {
-        for (Jogada jogadaGanha : jogadasQuePerco()) {
-            if (jogadaGanha.getClass() == jogada.getClass()) {
+        for (Jogada jogadaAtual : jogadasQuePerco()) {
+            if (jogadaAtual.getClass() == jogada.getClass()) {
                 return true;
             }
         }
@@ -25,8 +25,8 @@ public abstract class Jogada {
     }
 
     final private boolean verificarSeGanhei(Jogada jogada) {
-        for (Jogada jogadaGanha : jogadasQueVenco()) {
-            if (jogadaGanha.getClass() == jogada.getClass()) {
+        for (Jogada jogadaAtual : jogadasQueVenco()) {
+            if (jogadaAtual.getClass() == jogada.getClass()) {
                 return true;
             }
         }
