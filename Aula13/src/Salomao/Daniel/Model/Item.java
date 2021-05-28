@@ -1,7 +1,5 @@
 package Salomao.Daniel.Model;
 
-package br.maua.model;
-
 /**
  * Classe que representa um item armazenado no sistema
  */
@@ -29,5 +27,15 @@ public class Item {
                 "nome='" + nome + '\'' +
                 ", preco=" + preco +
                 '}';
+    }
+
+    /**
+     * Método que cria um objeto Item dada uma string de entrada
+     * @param dados String com os valores do nome e do preço do item
+     * @return Uma instância de item
+     */
+    public static Item pegaItem(String dados){
+        return new Item(dados.split(",")[0],
+                Double.parseDouble(dados.split(",")[1]));
     }
 }
