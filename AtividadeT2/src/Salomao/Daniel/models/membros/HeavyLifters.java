@@ -1,4 +1,9 @@
 package Salomao.Daniel.models.membros;
 
-public class HeavyLifters {
+import Salomao.Daniel.models.Membro;
+
+public class HeavyLifters extends Membro {
+    public HeavyLifters(String nome, String funcao, String email){
+        super(nome, funcao, email);
+    }
 }
