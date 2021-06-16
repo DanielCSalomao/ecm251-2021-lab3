@@ -1,4 +1,4 @@
 package Salomao.Daniel.interfaces;
 
-public class Sistema {
+public class PostarMensagem {
 }
