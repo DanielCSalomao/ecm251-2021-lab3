@@ -1,4 +1,6 @@
 package Salomao.Daniel.interfaces;
 
-public class Apresentacao {
+
+public interface Apresentacao {
+    
 }

@@ -20,7 +20,6 @@ public class ArrayListTestDrive {
                         new Pessoa("Hyoga", "785")
                 )
         );
-
         System.out.println("===================");
         System.out.println("Passa pelo arrayList Pessoas:");
         pessoas.forEach(pessoa -> System.out.println(pessoa));
@@ -28,7 +27,6 @@ public class ArrayListTestDrive {
         List<Conta> contas = new ArrayList<>();
         contas.add(new Conta(89));
         contas.add(new Conta());
-
         System.out.println("===================");
         System.out.println("Passa pelo arrayList Contas:");
         contas.forEach(conta -> System.out.println(conta));

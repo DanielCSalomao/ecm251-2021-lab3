@@ -1,4 +1,4 @@
 package Salomao.Daniel.interfaces;
 
-public class PostarMensagem {
+public interface PostarMensagem {
 }
