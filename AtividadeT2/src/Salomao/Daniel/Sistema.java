@@ -11,18 +11,18 @@ public class Sistema {
     public void run(){
         boolean continuar = true;
         do{
-            mostraAcoes();
+            menu();
+            int opcao = scanner.nextInt();
         }while(continuar);
     }
 
-    private void mostraAcoes() {
+    private void menu() {
         System.out.println("Selecione uma ação:");
-        System.out.println("MM (Mobile Members");
-        System.out.println("HL (Heavy Lifters");
-        System.out.println("SG (Script Guys");
-        System.out.println("BB (Big Brothers");
-        String escolha = scanner.nextLine();
-        System.out.println("sua escolha: "+escolha);
+        System.out.println("1. Registrar Membros");
+        System.out.println("2. Horário do Sistema");
+        System.out.println("3. Postar Mensagem");
+        System.out.println("4. Remover Membro");
+        System.out.println("5. Exibir Relatório");
         }
     }
 
