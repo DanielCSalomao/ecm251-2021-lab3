@@ -10,7 +10,6 @@ import Salomao.Daniel.models.membros.ScriptGuys;
 import java.io.FileWriter;
 import java.util.HashMap;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -56,11 +55,14 @@ public class Sistema {
             case 0:
                 System.out.println("Digite um grupo entre: MM, HL, SG, BB: ");
                 String opcaoGrupo = scanner.next().toUpperCase();
-
+    //para criar membros de diferentes grupos, usei 4 cases de opções
+    //assim, dependendo do grupo que o membro vai ser, já crio um new tipo de membro para adicionar no map
                 switch (opcaoGrupo){
                     case "MM":
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeMM = scanner.next();
+    //crio a chave, usando o grupo e para cada grupo tenho uma numeração propria
+    //problema: ser remover o membro 2, a chave do 3 não muda, então não teria uma alocação do membro 3 para posicao 2
                         String addKeyMM = opcaoGrupo + String.valueOf(idMM);
                         itemMap.put(addKeyMM, new MobileMembers(nomeMM,opcaoGrupo));
                         this.idMM+=1;
