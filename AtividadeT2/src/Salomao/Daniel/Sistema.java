@@ -51,12 +51,12 @@ public class Sistema {
     //opção case 0, adicionar membro. Pedir o grupo e nome do membro
     //adicionar com as keys informadas o membro no grupo desejado
             case 0:
-                System.out.println("Informe um grupo entre: MM, HL, SG, BB: ");
+                System.out.println("Digite um grupo entre: MM, HL, SG, BB: ");
                 String opcaoGrupo = scanner.next().toUpperCase();
 
                 switch (opcaoGrupo){
                     case "MM":
-                        System.out.println("Informe o nome: ");
+                        System.out.println("Digite o nome do novo Membro: ");
                         String nomeMM = scanner.next();
                         String addKeyMM = opcaoGrupo + String.valueOf(idMM);
                         itemMap.put(addKeyMM, new MobileMembers(nomeMM,opcaoGrupo));
@@ -64,7 +64,7 @@ public class Sistema {
                         break;
 
                     case "HL":
-                        System.out.println("Informe o nome: ");
+                        System.out.println("Digite o nome do novo Membro: ");
                         String nomeHL = scanner.next();
                         String addKeyHL = opcaoGrupo + String.valueOf(idHL);
                         itemMap.put(addKeyHL, new HeavyLifters(nomeHL,opcaoGrupo));
@@ -72,7 +72,7 @@ public class Sistema {
                         break;
 
                     case "SG":
-                        System.out.println("Informe o nome: ");
+                        System.out.println("Digite o nome do novo Membro: ");
                         String nomeSG = scanner.next();
                         String addKeySG = opcaoGrupo + String.valueOf(idSG);
                         itemMap.put(addKeySG, new ScriptGuys(nomeSG,opcaoGrupo));
@@ -80,7 +80,7 @@ public class Sistema {
                         break;
 
                     case "BB":
-                        System.out.println("Informe o nome: ");
+                        System.out.println("Digite o nome do novo Membro: ");
                         String nomeBB = scanner.next();
                         String addKeyBB = opcaoGrupo + String.valueOf(idBB);
                         itemMap.put(addKeyBB, new BigBrothers(nomeBB,opcaoGrupo));
