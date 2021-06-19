@@ -34,6 +34,7 @@ public class Sistema {
         do{
     //iniciando sistema, mostra menu e avalia uma opção também considerando um grupo
             System.out.println("\nSistema em Horário " + horarioSistema());
+            itemMap.forEach((chave, valor) -> System.out.println(valor.getNome()+"\t"+chave));
             menu();
             int opcao = scanner.nextInt();
             avaliarOpcao(opcao,idMM,idHL,idSG,idBB);
@@ -110,7 +111,7 @@ public class Sistema {
                 String opcaoGrupoRetirar = scanner.next().toUpperCase();
                 System.out.println("Informe o numero do membro: ");
                 String NMembro = scanner.next();
-                String removeKey = opcaoGrupoRetirar + NMembro + 1;
+                String removeKey = opcaoGrupoRetirar + NMembro;
                 itemMap.remove(removeKey);
                 break;
     //exibir relatório, aqui chamo a interface apresentaMembro
