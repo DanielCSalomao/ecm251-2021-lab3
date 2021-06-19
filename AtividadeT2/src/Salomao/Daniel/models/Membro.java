@@ -19,7 +19,12 @@ public abstract class Membro implements Apresentacao, PostarMensagem {
     }
 
     @Override
-    public String postaMensagem() {
+    public String postaMensagemNormal() {
+        return null;
+    }
+
+    @Override
+    public String postaMensagemExtra() {
         return null;
     }
 

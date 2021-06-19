@@ -1,5 +1,6 @@
 package Salomao.Daniel.interfaces;
 
 public interface PostarMensagem {
-    public String postaMensagem();
+    public String postaMensagemNormal();
+    public String postaMensagemExtra();
 }

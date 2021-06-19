@@ -11,4 +11,13 @@ public class ScriptGuys extends Membro {
     public String apresentaMembro() {
         return "Nome: " + this.getNome() + " Função: Script Guys";
     }
+    @Override
+    public String postaMensagemNormal() {
+        return "Prazer em ajudar novos amigos de código!";
+    }
+
+    @Override
+    public String postaMensagemExtra() {
+        return "QU3Ro_S3us_r3curs0s.py";
+    }
 }

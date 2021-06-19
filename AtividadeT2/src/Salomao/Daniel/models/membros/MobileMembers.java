@@ -12,4 +12,13 @@ public class MobileMembers extends Membro {
     public String apresentaMembro() {
         return "Nome: " + this.getNome() + " Função: Mobile Members" ;
     }
+    @Override
+    public String postaMensagemNormal() {
+        return "Happy Coding!";
+    }
+
+    @Override
+    public String postaMensagemExtra() {
+        return "Happy_C0d1ng. Maskers";
+    }
 }

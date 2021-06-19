@@ -94,7 +94,12 @@ public class Sistema {
                 break;
     //caso 2, Postar Mensagem
             case 2:
-                System.out.println("Informe qual grupo vai postar mensagem: HH, HL, SG, BB");
+                System.out.println("Postando Mensagens: ");
+                if(horarioSistema()==HorarioSistema.NORMAL){
+                    itemMap.forEach((chave, valor) -> System.out.println(valor.getNome()+": " + valor.postaMensagemNormal()));
+                }else{
+                    itemMap.forEach((chave, valor) -> System.out.println(valor.getNome()+": " + valor.postaMensagemExtra()));
+                }
                 break;
     //caso 3, remover membro
     //informando grupo e número do membro (começando com 1 não 0), encontro a key desse membro e fica fácil remover

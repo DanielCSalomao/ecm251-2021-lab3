@@ -13,5 +13,13 @@ public class BigBrothers extends Membro {
         return "Nome: " + this.getNome() + " Função: Big Brothers";
     }
 
+    @Override
+    public String postaMensagemNormal() {
+        return "Sempre ajudando as pessoas membros ou não S2!";
+    }
 
+    @Override
+    public String postaMensagemExtra() {
+        return "...";
+    }
 }
