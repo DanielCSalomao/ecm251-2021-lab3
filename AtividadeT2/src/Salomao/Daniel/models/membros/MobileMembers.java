@@ -6,6 +6,10 @@ public class MobileMembers extends Membro {
 
     public MobileMembers(String nome, String funcao){
         super(nome, funcao);
+    }
 
+    @Override
+    public String apresentaMembro() {
+        return "Nome: " + this.getNome() + " Função: Mobile Members" ;
     }
 }

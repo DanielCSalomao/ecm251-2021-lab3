@@ -8,6 +8,10 @@ public class BigBrothers extends Membro {
         super(nome, funcao);
 
     }
+    @Override
+    public String apresentaMembro() {
+        return "Nome: " + this.getNome() + " Função: Big Brothers";
+    }
 
 
 }

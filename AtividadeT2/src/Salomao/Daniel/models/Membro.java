@@ -2,8 +2,9 @@ package Salomao.Daniel.models;
 
 
 import Salomao.Daniel.interfaces.Apresentacao;
+import Salomao.Daniel.interfaces.PostarMensagem;
 
-public abstract class Membro implements Apresentacao {
+public abstract class Membro implements Apresentacao, PostarMensagem {
     private String nome;
     private String funcao;
 
@@ -12,6 +13,15 @@ public abstract class Membro implements Apresentacao {
         this.funcao = funcao;
     }
 
+    @Override
+    public String apresentaMembro() {
+        return null;
+    }
+
+    @Override
+    public String postaMensagem() {
+        return null;
+    }
 
     public String getNome() {
         return nome;
@@ -20,6 +30,7 @@ public abstract class Membro implements Apresentacao {
     public String getFuncao() {
         return funcao;
     }
+
 
     @Override
     public String toString() {
