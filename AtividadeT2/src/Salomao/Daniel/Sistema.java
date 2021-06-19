@@ -7,8 +7,10 @@ import Salomao.Daniel.models.membros.HeavyLifters;
 import Salomao.Daniel.models.membros.MobileMembers;
 import Salomao.Daniel.models.membros.ScriptGuys;
 
+import java.io.FileWriter;
 import java.util.HashMap;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -113,9 +115,14 @@ public class Sistema {
                 break;
     //exibir relatório, aqui chamo a interface apresentaMembro
             case 4:
-                System.out.println("Exibindo relatório dos membros: ");
-                itemMap.forEach((chave, valor) -> System.out.println(valor.apresentaMembro()+" Id: "+chave));
-
+                //System.out.println("Exibindo relatório dos membros: ");
+                //itemMap.forEach((chave, valor) -> System.out.println(valor.apresentaMembro()+" Id: "+chave));
+                try{
+                    criarNota(itemMap);
+                }
+                catch (Exception exception){
+                    System.out.println("Algo deu errado:");
+                }
                 break;
 
         }
@@ -130,5 +137,24 @@ public class Sistema {
         System.out.println("4. Exibir Relatório");
         }
 
+    private static void criarNota(Map<String, Membro> itemMap) throws Exception{
+        //Cria um novo arquivo, sobreescrevendo o anterior
+        //FileWriter fileWriter = new FileWriter("nota.toguro");
+        //Adiciona o conteúdo no arquivo anterior
+        FileWriter fileWriter = new FileWriter("arquivo_super_Secreto_nao_abrir.csv",true);
+        //Coloca a string com \n no final
+        fileWriter.write("=== Membros ==="+"\n");
+        //Apenas coloca a string no arquivo
+        fileWriter.append("Total de Membros atualmente:" + itemMap.size()+"\n");
+        fileWriter.append("Membros:"+"\n");
+        for (Map.Entry<String, Membro> entry : itemMap.entrySet()) {
+            String chave = entry.getKey();
+            Membro valor = entry.getValue();
+            fileWriter.append(valor.getFuncao() + ";" + valor.getNome() + ";" + chave + "\n");
+        }
+
+        //Fechar o arquivo! e Salva as mudanças
+        fileWriter.close();
+    }
     }
 
