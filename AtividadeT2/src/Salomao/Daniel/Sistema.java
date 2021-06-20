@@ -1,6 +1,7 @@
 package Salomao.Daniel;
 
 import Salomao.Daniel.enums.HorarioSistema;
+import Salomao.Daniel.enums.TipoMembro;
 import Salomao.Daniel.models.Membro;
 import Salomao.Daniel.models.membros.BigBrothers;
 import Salomao.Daniel.models.membros.HeavyLifters;
@@ -64,7 +65,8 @@ public class Sistema {
     //crio a chave, usando o grupo e para cada grupo tenho uma numeração propria
     //problema: ser remover o membro 2, a chave do 3 não muda, então não teria uma alocação do membro 3 para posicao 2
                         String addKeyMM = opcaoGrupo + String.valueOf(idMM);
-                        itemMap.put(addKeyMM, new MobileMembers(nomeMM,opcaoGrupo));
+
+                        itemMap.put(addKeyMM, new MobileMembers(nomeMM,TipoMembro.MM));
                         this.idMM+=1;
                         break;
 
@@ -72,7 +74,7 @@ public class Sistema {
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeHL = scanner.next();
                         String addKeyHL = opcaoGrupo + String.valueOf(idHL);
-                        itemMap.put(addKeyHL, new HeavyLifters(nomeHL,opcaoGrupo));
+                        itemMap.put(addKeyHL, new HeavyLifters(nomeHL,TipoMembro.HL));
                         this.idHL+=1;
                         break;
 
@@ -80,7 +82,7 @@ public class Sistema {
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeSG = scanner.next();
                         String addKeySG = opcaoGrupo + String.valueOf(idSG);
-                        itemMap.put(addKeySG, new ScriptGuys(nomeSG,opcaoGrupo));
+                        itemMap.put(addKeySG, new ScriptGuys(nomeSG,TipoMembro.SG));
                         this.idSG+=1;
                         break;
 
@@ -88,7 +90,7 @@ public class Sistema {
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeBB = scanner.next();
                         String addKeyBB = opcaoGrupo + String.valueOf(idBB);
-                        itemMap.put(addKeyBB, new BigBrothers(nomeBB,opcaoGrupo));
+                        itemMap.put(addKeyBB, new BigBrothers(nomeBB,TipoMembro.BB));
                         this.idBB+=1;
                         break;
                 }break;
@@ -153,7 +155,7 @@ public class Sistema {
         for (Map.Entry<String, Membro> entry : itemMap.entrySet()) {
             String chave = entry.getKey();
             Membro valor = entry.getValue();
-            fileWriter.append(valor.getFuncao() + ";" + valor.getNome() + ";" + chave + "\n");
+            fileWriter.append(valor.getTipoMembro() + ";" + valor.getNome() + ";" + chave + "\n");
         }
 
         //Fechar o arquivo! e Salva as mudanças

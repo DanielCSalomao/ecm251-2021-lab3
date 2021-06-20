@@ -1,16 +1,16 @@
 package Salomao.Daniel.models;
 
 
+import Salomao.Daniel.enums.TipoMembro;
 import Salomao.Daniel.interfaces.Apresentacao;
 import Salomao.Daniel.interfaces.PostarMensagem;
 
 public abstract class Membro implements Apresentacao, PostarMensagem {
+    protected TipoMembro tipoMembro;
     private String nome;
-    private String funcao;
 
-    public Membro(String nome, String funcao){
+    public Membro(String nome){
         this.nome = nome;
-        this.funcao = funcao;
     }
 
     @Override
@@ -32,18 +32,7 @@ public abstract class Membro implements Apresentacao, PostarMensagem {
         return nome;
     }
 
-    public String getFuncao() {
-        return funcao;
+    public TipoMembro getTipoMembro() {
+        return tipoMembro;
     }
-
-
-    @Override
-    public String toString() {
-        return "Membro{" +
-                "nome='" + nome + '\'' +
-                ", funcao='" + funcao + '\'' +
-                '}';
-    }
-
-
 }

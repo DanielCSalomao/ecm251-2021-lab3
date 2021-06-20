@@ -1,12 +1,13 @@
 package Salomao.Daniel.models.membros;
 
+import Salomao.Daniel.enums.TipoMembro;
 import Salomao.Daniel.models.Membro;
 
 public class BigBrothers extends Membro {
 
-    public BigBrothers(String nome, String funcao){
-        super(nome, funcao);
-
+    public BigBrothers(String nome, TipoMembro tipoMembro){
+        super(nome);
+        this.tipoMembro=tipoMembro;
     }
     @Override
     public String apresentaMembro() {
