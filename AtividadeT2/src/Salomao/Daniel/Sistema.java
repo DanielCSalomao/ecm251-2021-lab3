@@ -63,7 +63,7 @@ public class Sistema {
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeMM = scanner.next();
     //crio a chave, usando o grupo e para cada grupo tenho uma numeração propria
-    //problema: ser remover o membro 2, a chave do 3 não muda, então não teria uma alocação do membro 3 para posicao 2
+    //problema: ser remover o membro 2, a chave do 3 não muda, então não teria uma realocação do membro 3 para posicao 2
                         String addKeyMM = opcaoGrupo + String.valueOf(idMM);
 
                         itemMap.put(addKeyMM, new MobileMembers(nomeMM,TipoMembro.MM));
@@ -118,10 +118,8 @@ public class Sistema {
                 String removeKey = opcaoGrupoRetirar + NMembro;
                 itemMap.remove(removeKey);
                 break;
-    //exibir relatório, aqui chamo a interface apresentaMembro
+    //gerar relatório, aqui chamo a interface apresentaMembro
             case 4:
-                //System.out.println("Exibindo relatório dos membros: ");
-                //itemMap.forEach((chave, valor) -> System.out.println(valor.apresentaMembro()+" Id: "+chave));
                 try{
                     criarNota(itemMap);
                 }
@@ -139,17 +137,12 @@ public class Sistema {
         System.out.println("1. Trocar Horário do Sistema");
         System.out.println("2. Postar Mensagem");
         System.out.println("3. Remover Membro");
-        System.out.println("4. Exibir Relatório");
+        System.out.println("4. Gerar Relatório");
         }
 
     private static void criarNota(Map<String, Membro> itemMap) throws Exception{
-        //Cria um novo arquivo, sobreescrevendo o anterior
-        //FileWriter fileWriter = new FileWriter("nota.toguro");
-        //Adiciona o conteúdo no arquivo anterior
         FileWriter fileWriter = new FileWriter("arquivo_super_Secreto_nao_abrir.csv",true);
-        //Coloca a string com \n no final
         fileWriter.write("=== Membros ==="+"\n");
-        //Apenas coloca a string no arquivo
         fileWriter.append("Total de Membros atualmente:" + itemMap.size()+"\n");
         fileWriter.append("Membros:"+"\n");
         for (Map.Entry<String, Membro> entry : itemMap.entrySet()) {
@@ -157,8 +150,7 @@ public class Sistema {
             Membro valor = entry.getValue();
             fileWriter.append(valor.getTipoMembro() + ";" + valor.getNome() + ";" + chave + "\n");
         }
-
-        //Fechar o arquivo! e Salva as mudanças
+        //Fechar o arquivo e salva as mudanças
         fileWriter.close();
     }
     }
