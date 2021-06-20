@@ -8,5 +8,5 @@ package Salomao.Daniel.enums;
 
 
 public enum TipoMembro {
-    MM, HL, SG, BB;
+    MobileMembers, HeavyLifters, ScriptGuys, BigBrothers;
 }

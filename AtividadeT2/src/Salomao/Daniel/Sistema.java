@@ -15,9 +15,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Sistema {
-    //Ints para contar quantidade de membros para cada grupo
-    static int idMM = 0, idHL = 0,idSG = 0 ,idBB = 0;
-
     //Horário do sistema, quando isistema é par, NORMAL, quando ímpar, EXTRA
     static int iSistema = 2;
     private Scanner scanner;
@@ -34,10 +31,9 @@ public class Sistema {
         do{
     //iniciando sistema, mostra menu e avalia uma opção também considerando um grupo
             System.out.println("\nSistema em Horário " + horarioSistema());
-            itemMap.forEach((chave, valor) -> System.out.println(valor.getNome()+"\t"+chave));
             menu();
             int opcao = scanner.nextInt();
-            avaliarOpcao(opcao,idMM,idHL,idSG,idBB);
+            avaliarOpcao(opcao);
         }while(continuar);
     }
 
@@ -48,50 +44,44 @@ public class Sistema {
             return HorarioSistema.EXTRA;
     }
     //avaliar opção, com 5 opções diferentes
-    private void avaliarOpcao(int opcao,int idMM, int idHL,int idSG, int idBB) {
+    private void avaliarOpcao(int opcao) {
         switch (opcao){
 
     //opção case 0, adicionar membro. Pedir o grupo e nome do membro
     //adicionar com as keys informadas o membro no grupo desejado
             case 0:
-                System.out.println("Digite um grupo entre: MM, HL, SG, BB: ");
-                String opcaoGrupo = scanner.next().toUpperCase();
+                menuMembros();
+                int opcaoGrupo = scanner.nextInt();
     //para criar membros de diferentes grupos, usei 4 cases de opções
     //assim, dependendo do grupo que o membro vai ser, já crio um new tipo de membro para adicionar no map
                 switch (opcaoGrupo){
-                    case "MM":
+                    case 0:
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeMM = scanner.next();
-    //crio a chave, usando o grupo e para cada grupo tenho uma numeração propria
     //problema: ser remover o membro 2, a chave do 3 não muda, então não teria uma realocação do membro 3 para posicao 2
-                        String addKeyMM = opcaoGrupo + String.valueOf(idMM);
-
-                        itemMap.put(addKeyMM, new MobileMembers(nomeMM,TipoMembro.MM));
-                        this.idMM+=1;
+                        String addKeyMM = opcaoGrupo + String.valueOf(MobileMembers.getId());
+                        itemMap.put(addKeyMM, new MobileMembers(nomeMM,TipoMembro.MobileMembers));
                         break;
 
-                    case "HL":
+                    case 1:
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeHL = scanner.next();
-                        String addKeyHL = opcaoGrupo + String.valueOf(idHL);
-                        itemMap.put(addKeyHL, new HeavyLifters(nomeHL,TipoMembro.HL));
-                        this.idHL+=1;
+                        String addKeyHL = opcaoGrupo + String.valueOf(HeavyLifters.getId());
+                        itemMap.put(addKeyHL, new HeavyLifters(nomeHL,TipoMembro.HeavyLifters));
                         break;
 
-                    case "SG":
+                    case 2:
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeSG = scanner.next();
-                        String addKeySG = opcaoGrupo + String.valueOf(idSG);
-                        itemMap.put(addKeySG, new ScriptGuys(nomeSG,TipoMembro.SG));
-                        this.idSG+=1;
+                        String addKeySG = opcaoGrupo + String.valueOf(ScriptGuys.getId());
+                        itemMap.put(addKeySG, new ScriptGuys(nomeSG,TipoMembro.ScriptGuys));
                         break;
 
-                    case "BB":
+                    case 3:
                         System.out.println("Digite o nome do novo Membro: ");
                         String nomeBB = scanner.next();
-                        String addKeyBB = opcaoGrupo + String.valueOf(idBB);
-                        itemMap.put(addKeyBB, new BigBrothers(nomeBB,TipoMembro.BB));
-                        this.idBB+=1;
+                        String addKeyBB = opcaoGrupo + String.valueOf(BigBrothers.getId());
+                        itemMap.put(addKeyBB, new BigBrothers(nomeBB,TipoMembro.BigBrothers));
                         break;
                 }break;
     //caso 1, modificar o horário do sistema, aqui somente adicionei 1 ao valor de iSistema
@@ -111,9 +101,9 @@ public class Sistema {
     //caso 3, remover membro
     //informando grupo e número do membro (começando com 1 não 0), encontro a key desse membro e fica fácil remover
             case 3:
-                System.out.println("Informe um grupo entre: MM, HL, SG, BB: ");
-                String opcaoGrupoRetirar = scanner.next().toUpperCase();
-                System.out.println("Informe o numero do membro: ");
+                menuMembros();
+                String opcaoGrupoRetirar = scanner.next();
+                System.out.println("Informe o numero do membro (começa no 0): ");
                 String NMembro = scanner.next();
                 String removeKey = opcaoGrupoRetirar + NMembro;
                 itemMap.remove(removeKey);
@@ -139,6 +129,13 @@ public class Sistema {
         System.out.println("3. Remover Membro");
         System.out.println("4. Gerar Relatório");
         }
+    private void menuMembros() {
+        System.out.println("Selecione um grupo de membros:");
+        System.out.println("0. Mobile Members");
+        System.out.println("1. Heavy Lifters");
+        System.out.println("2. Script Guys");
+        System.out.println("3. Big Brothers");
+    }
 
     private static void criarNota(Map<String, Membro> itemMap) throws Exception{
         FileWriter fileWriter = new FileWriter("arquivo_super_Secreto_nao_abrir.csv",true);

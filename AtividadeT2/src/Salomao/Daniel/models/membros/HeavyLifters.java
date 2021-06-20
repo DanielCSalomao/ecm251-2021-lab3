@@ -4,10 +4,18 @@ import Salomao.Daniel.enums.TipoMembro;
 import Salomao.Daniel.models.Membro;
 
 public class HeavyLifters extends Membro {
+    private static int id =0;
 
     public HeavyLifters(String nome, TipoMembro tipoMembro){
         super(nome);
         this.tipoMembro=tipoMembro;
+        this.id = getId();
+    }
+    public static int getId() {
+        return id;
+    }
+    {
+        id+=1;
     }
     @Override
     public String apresentaMembro() {

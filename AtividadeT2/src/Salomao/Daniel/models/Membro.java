@@ -8,6 +8,7 @@ import Salomao.Daniel.interfaces.PostarMensagem;
 public abstract class Membro implements Apresentacao, PostarMensagem {
     protected TipoMembro tipoMembro;
     private String nome;
+    private int id;
 
     public Membro(String nome){
         this.nome = nome;
